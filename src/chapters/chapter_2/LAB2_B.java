@@ -9,21 +9,21 @@ import java.util.*;
  */
 public class LAB2_B {
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-        task4();
-        task5(129);
-        task6(81, "100");
-        task7();
-        task8("1010", 2, 10);
-        task9();
+        printMultiplicationTable();
+        reverseArray();
+        checkIntervalMembership();
+        printDivisibleByThree();
+        countSignificantZerosInBinary(129);
+        findNumberBase(81, "100");
+        convertDecimalToBase();
+        convertBetweenNumberSystems("1010", 2, 10);
+        printMonthByNumber();
     }
 
     /**
-     Вывести на экран таблицу умножения.
+     * Вывести на экран таблицу умножения.
      */
-    private static void task1() {
+    public static void printMultiplicationTable() {
         for (int i = 1; i <= 10; i++) {
             for (int j = 1; j <= 10; j++) {
                 System.out.printf("%4d", i * j);
@@ -33,9 +33,9 @@ public class LAB2_B {
     }
 
     /**
-     Вывести элементы массива в обратном порядке.
+     * Вывести элементы массива в обратном порядке.
      */
-    private static void task2() {
+    public static void reverseArray() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размер массива:");
         int n = scanner.nextInt();
@@ -54,9 +54,9 @@ public class LAB2_B {
     }
 
     /**
-     Определить принадлежность некоторого значения k интервалам (n, m], [n, m), (n, m), [n, m].
+     * Определить принадлежность некоторого значения k интервалам (n, m], [n, m), (n, m), [n, m].
      */
-    private static void task3() {
+    public static void checkIntervalMembership() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите значения n и m:");
         int n = scanner.nextInt();
@@ -72,9 +72,9 @@ public class LAB2_B {
     }
 
     /**
-     Вывести на экран все числа от 1 до 100, которые делятся на 3 без остатка.
+     * Вывести на экран все числа от 1 до 100, которые делятся на 3 без остатка.
      */
-    private static void task4() {
+    public static void printDivisibleByThree() {
         System.out.println("Числа от 1 до 100, делящиеся на 3:");
         for (int i = 1; i <= 100; i++) {
             if (i % 3 == 0) {
@@ -85,18 +85,18 @@ public class LAB2_B {
     }
 
     /**
-     Сколько значащих нулей в двоичной записи числа 129?
+     * Сколько значащих нулей в двоичной записи числа 129?
      */
-    private static void task5(int number) {
+    public static void countSignificantZerosInBinary(int number) {
         String binary = Integer.toBinaryString(number);
         long zeroCount = binary.chars().filter(ch -> ch == '0').count();
         System.out.println("Количество значащих нулей в двоичной записи числа " + number + ": " + zeroCount);
     }
 
     /**
-     В системе счисления с некоторым основанием десятичное число 81 записывается в виде 100. Найти это основание.
+     * В системе счисления с некоторым основанием десятичное число 81 записывается в виде 100. Найти это основание.
      */
-    private static void task6(int number, String representation) {
+    public static void findNumberBase(int number, String representation) {
         for (int base = 2; base <= 36; base++) {
             if (Integer.toString(number, base).equals(representation)) {
                 System.out.println("Основание системы счисления для числа " + number + ", записанного как " + representation + ": " + base);
@@ -107,9 +107,9 @@ public class LAB2_B {
     }
 
     /**
-     Написать код программы, которая бы переводила числа из десятичной системы счисления в любую другую.
+     * Написать код программы, которая бы переводила числа из десятичной системы счисления в любую другую.
      */
-    private static void task7() {
+    public static void convertDecimalToBase() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число и основание:");
         int number = scanner.nextInt();
@@ -118,17 +118,17 @@ public class LAB2_B {
     }
 
     /**
-     Написать код программы, которая бы переводила числа одной любой системы счисления в любую другую.
+     * Написать код программы, которая бы переводила числа одной любой системы счисления в любую другую.
      */
-    private static void task8(String number, int fromBase, int toBase) {
+    public static void convertBetweenNumberSystems(String number, int fromBase, int toBase) {
         int decimalValue = Integer.parseInt(number, fromBase);
         System.out.println("Число " + number + " из системы счисления " + fromBase + " в систему счисления " + toBase + ": " + Integer.toString(decimalValue, toBase));
     }
 
     /**
-     Ввести число от 1 до 12. Вывести на консоль название месяца, соответствующего данному числу. Осуществить проверку корректности ввода чисел.
+     * Ввести число от 1 до 12. Вывести на консоль название месяца, соответствующего данному числу. Осуществить проверку корректности ввода чисел.
      */
-    private static void task9() {
+    public static void printMonthByNumber() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер месяца (1-12):");
         int month = scanner.nextInt();

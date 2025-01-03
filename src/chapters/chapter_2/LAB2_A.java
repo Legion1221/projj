@@ -3,7 +3,7 @@ package chapters.chapter_2;
 import java.util.*;
 
 /**
- * Выполнин : Дамдинов Арья
+ * Выполнил : Дамдинов Арья
  * Дата получения задания: 01.09.2024
  * Дата сдачи задания: 05.12.2024
  */
@@ -35,10 +35,9 @@ public class LAB2_A {
         findSecondPalindrome(numbers);
     }
 
-    /**
-     * Находит самое короткое и самое длинное число и выводит их.
-     */
-    private static void findShortestAndLongest(String[] numbers) {
+
+     //Находит самое короткое и самое длинное число и выводит их.
+    public static void findShortestAndLongest(String[] numbers) {
         String shortest = numbers[0];
         String longest = numbers[0];
 
@@ -55,18 +54,16 @@ public class LAB2_A {
         System.out.println("Самое длинное число: " + longest + " (длина: " + longest.length() + ")");
     }
 
-    /**
-     * Упорядочивает числа по длине и выводит их.
-     */
-    private static void sortByLength(String[] numbers) {
+
+    //Упорядочивает числа по длине и выводит их.
+    public static void sortByLength(String[] numbers) {
         Arrays.sort(numbers, Comparator.comparingInt(String::length));
         System.out.println("Числа по возрастанию длины: " + Arrays.toString(numbers));
     }
 
-    /**
-     * Выводит числа, длина которых меньше или больше средней длины.
-     */
-    private static void findNumbersByAverageLength(String[] numbers) {
+
+    //Выводит числа, длина которых меньше или больше средней длины.
+    public static void findNumbersByAverageLength(String[] numbers) {
         double averageLength = Arrays.stream(numbers).mapToInt(String::length).average().orElse(0);
 
         System.out.println("Средняя длина: " + averageLength);
@@ -78,10 +75,9 @@ public class LAB2_A {
         }
     }
 
-    /**
-     * Находит число с минимальным количеством уникальных цифр.
-     */
-    private static void findMinimalUniqueDigits(String[] numbers) {
+
+    //Находит число с минимальным количеством уникальных цифр.
+    public static void findMinimalUniqueDigits(String[] numbers) {
         String result = numbers[0];
         int minUniqueDigits = countUniqueDigits(result);
 
@@ -96,14 +92,13 @@ public class LAB2_A {
         System.out.println("Число с минимальным количеством уникальных цифр: " + result);
     }
 
-    private static int countUniqueDigits(String number) {
+    public static int countUniqueDigits(String number) {
         return (int) number.chars().distinct().count();
     }
 
-    /**
-     * Подсчитывает числа с только четными цифрами и среди них числа с равным количеством четных и нечетных цифр.
-     */
-    private static void countEvenDigitNumbers(String[] numbers) {
+
+    //Подсчитывает числа с только четными цифрами и среди них числа с равным количеством четных и нечетных цифр.
+    public static void countEvenDigitNumbers(String[] numbers) {
         int allEvenCount = 0;
         int equalEvenOddCount = 0;
 
@@ -123,10 +118,9 @@ public class LAB2_A {
         System.out.println("Чисел с равным количеством четных и нечетных цифр: " + equalEvenOddCount);
     }
 
-    /**
-     * Находит первое число, в котором цифры расположены в порядке возрастания.
-     */
-    private static void findIncreasingDigitNumber(String[] numbers) {
+
+    //Находит первое число, в котором цифры расположены в порядке возрастания.
+    public static void findIncreasingDigitNumber(String[] numbers) {
         for (String num : numbers) {
             if (isDigitsIncreasing(num)) {
                 System.out.println("Число с цифрами в порядке возрастания: " + num);
@@ -136,7 +130,7 @@ public class LAB2_A {
         System.out.println("Нет числа с цифрами в порядке возрастания.");
     }
 
-    private static boolean isDigitsIncreasing(String number) {
+    public static boolean isDigitsIncreasing(String number) {
         for (int i = 1; i < number.length(); i++) {
             if (number.charAt(i) <= number.charAt(i - 1)) {
                 return false;
@@ -145,10 +139,9 @@ public class LAB2_A {
         return true;
     }
 
-    /**
-     * Находит первое число, состоящее только из уникальных цифр.
-     */
-    private static void findUniqueDigitNumber(String[] numbers) {
+
+    //Находит первое число, состоящее только из уникальных цифр.
+    public static void findUniqueDigitNumber(String[] numbers) {
         for (String num : numbers) {
             if (countUniqueDigits(num) == num.length()) {
                 System.out.println("Число с уникальными цифрами: " + num);
@@ -158,10 +151,9 @@ public class LAB2_A {
         System.out.println("Нет числа с уникальными цифрами.");
     }
 
-    /**
-     * Находит второе число-палиндром.
-     */
-    private static void findSecondPalindrome(String[] numbers) {
+
+    //Находит второе число-палиндром.
+    public static void findSecondPalindrome(String[] numbers) {
         int palindromeCount = 0;
 
         for (String num : numbers) {
@@ -177,8 +169,7 @@ public class LAB2_A {
         System.out.println("Второго числа-палиндрома нет.");
     }
 
-    private static boolean isPalindrome(String number) {
+    public static boolean isPalindrome(String number) {
         return new StringBuilder(number).reverse().toString().equals(number);
     }
 }
-
