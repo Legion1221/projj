@@ -214,7 +214,7 @@ class Country {
     }
 }
 
-// Главный класс с запуском программы
+
 public class LAB4_A {
     public static void main(String[] args) {
         // Создание городов
