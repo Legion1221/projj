@@ -1,0 +1,4 @@
+Carrot 150
+Cucumber 200
+Tomato 100
+Carrot 120

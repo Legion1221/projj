@@ -1,5 +1,11 @@
 package chapters.chapter_4;
 
+/*
+ * Выполнил : Дамдинов Арья
+ * Дата получения задания: 01.09.2024
+ * Дата сдачи задания: 10.01.2025
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

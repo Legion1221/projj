@@ -1,5 +1,11 @@
 package chapters.chapter_1;
 
+/*
+ * Выполнил : Дамдинов Арья
+ * Дата получения задания: 01.09.2024
+ * Дата сдачи задания: 3.12.2024
+ */
+
 import java.util.Scanner;
 import java.util.Random;
 

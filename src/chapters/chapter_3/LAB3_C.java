@@ -1,12 +1,11 @@
 package chapters.chapter_3;
 
-import java.util.*;
-
-/**
+/*
  * Выполнил: Дамдинов Арья
  * Дата получения задания: 01.09.2024
  * Дата сдачи задания: 19.12.2024
  */
+
 class ComplexNumber {
     private double real;
     private double imaginary; // Мнимая часть

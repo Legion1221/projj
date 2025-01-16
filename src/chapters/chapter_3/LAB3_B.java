@@ -2,7 +2,7 @@ package chapters.chapter_3;
 
 import java.util.*;
 
-/**
+/*
  * Выполнил: Дамдинов Арья
  * Дата получения задания: 01.09.2024
  * Дата сдачи задания: 14.12.2024
@@ -140,44 +140,5 @@ class PolynomialArray {
             sb.append(polynomial.toString() + "\n");
         }
         return sb.toString();
-    }
-}
-
-public class LAB3_B {
-    public static void main(String[] args) {
-        // Создание полиномов
-        Polynomial p1 = new Polynomial(List.of(1, 2, 3));  // 3x^2 + 2x + 1
-        Polynomial p2 = new Polynomial(List.of(2, 3, 4));  // 4x^2 + 3x + 2
-        Polynomial p3 = new Polynomial(List.of(1, 1));     // x + 1
-
-        // Вывод полиномов
-        System.out.println("Полином p1: " + p1);
-        System.out.println("Полином p2: " + p2);
-        System.out.println("Полином p3: " + p3);
-
-        // Сложение полиномов
-        Polynomial sum = p1.add(p2);
-        System.out.println("Сумма p1 + p2: " + sum);
-
-        // Вычитание полиномов
-        Polynomial difference = p1.subtract(p2);
-        System.out.println("Разность p1 - p2: " + difference);
-
-        // Умножение полиномов
-        Polynomial product = p1.multiply(p2);
-        System.out.println("Произведение p1 * p2: " + product);
-
-        // Деление полиномов
-        Polynomial quotient = p2.divide(p3);
-        System.out.println("Частное p2 / p3: " + quotient);
-
-        // Создание массива полиномов и их сумма
-        PolynomialArray polynomialArray = new PolynomialArray();
-        polynomialArray.addPolynomial(p1);
-        polynomialArray.addPolynomial(p2);
-        polynomialArray.addPolynomial(p3);
-
-        Polynomial totalSum = polynomialArray.sumPolynomials();
-        System.out.println("Сумма всех полиномов массива: " + totalSum);
     }
 }
