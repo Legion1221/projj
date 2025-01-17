@@ -2,6 +2,7 @@ package chapter8_Test;
 
 import chapters.chapter_8.LAB8_B;
 import org.junit.jupiter.api.Test;
+import java.util.HashSet;
 import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +15,14 @@ public class LAB8B_Test {
         int wordLength = 3;
         Set<String> words = LAB8_B.findWordsInQuestions(text, wordLength);
 
-        Set<String> expected = Set.of("how", "are", "you", "the", "way", "did");
+        Set<String> expected = new HashSet<>();
+        expected.add("how");
+        expected.add("are");
+        expected.add("you");
+        expected.add("the");
+        expected.add("way");
+        expected.add("did");
+
         assertEquals(expected, words, "Слова не совпадают с ожидаемыми!");
     }
 
@@ -24,7 +32,8 @@ public class LAB8B_Test {
         String text = "This is a test.";
         int wordLength = 3;
         Set<String> words = LAB8_B.findWordsInQuestions(text, wordLength);
-        Set<String> expected = Set.of();
+        Set<String> expected = new HashSet<>();
+
         assertEquals(expected, words, "Найдено ненужное слово!");
     }
 
@@ -36,7 +45,7 @@ public class LAB8B_Test {
         Set<String> words = LAB8_B.findWordsInQuestions(text, wordLength);
 
         // Пустое множество
-        Set<String> expected = Set.of();
+        Set<String> expected = new HashSet<>();
         assertEquals(expected, words, "Текст пуст, а слова найдены!");
     }
 

@@ -10,7 +10,7 @@ public class FileLoader {
         Salad salad = new Salad();
 
         // Создаем путь к файлу в папке LAB4_B
-        String filePath = "src/chapters/chapter_4/LAB4_B/" + filename;
+        String filePath = "src/main/java/chapters/chapter_4/LAB4_B" + filename;
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -21,10 +21,17 @@ public class FileLoader {
 
                 // Добавляем овощи в салат
                 switch (name) {
-                    case "Carrot" -> salad.addIngredient(new Carrot(weight));
-                    case "Cucumber" -> salad.addIngredient(new Cucumber(weight));
-                    case "Tomato" -> salad.addIngredient(new Tomato(weight));
-                    default -> throw new IllegalArgumentException("Неизвестный овощ: " + name);
+                    case "Carrot":
+                        salad.addIngredient(new Carrot(weight));
+                        break;
+                    case "Cucumber":
+                        salad.addIngredient(new Cucumber(weight));
+                        break;
+                    case "Tomato":
+                        salad.addIngredient(new Tomato(weight));
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Неизвестный овощ: " + name);
                 }
             }
         }

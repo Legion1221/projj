@@ -1,0 +1,2 @@
+This is a Java program that needs to be processed.
+It should convert lowercase letters to uppercase.

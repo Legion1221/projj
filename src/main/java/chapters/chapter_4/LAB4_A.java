@@ -7,6 +7,7 @@ package chapters.chapter_4;
  */
 
 import java.util.ArrayList;
+import java.util.Arrays; // Импортируйте Arrays для использования asList
 import java.util.List;
 import java.util.Objects;
 
@@ -220,7 +221,6 @@ class Country {
     }
 }
 
-
 public class LAB4_A {
     public static void main(String[] args) {
         // Создание городов
@@ -230,14 +230,14 @@ public class LAB4_A {
         City city4 = new City("City4", 741);
 
         // Создание районов
-        District district1 = new District("District1", city1, List.of(city1, city2));
-        District district2 = new District("District2", city2, List.of(city3, city4));
+        District district1 = new District("District1", city1, Arrays.asList(city1, city2));
+        District district2 = new District("District2", city2, Arrays.asList(city3, city4));
 
         // Создание областей
-        Region region1 = new Region("Region1", 2002, city1, List.of(district1, district2));
+        Region region1 = new Region("Region1", 2002, city1, Arrays.asList(district1, district2));
 
         // Создание государства
-        Country country = new Country("Country1", city1, List.of(region1));
+        Country country = new Country("Country1", city1, Arrays.asList(region1));
 
         // Вывод информации о государстве
         System.out.println("Столица государства: " + country.getCapital().getName());
